@@ -19,22 +19,31 @@ final class ListCollectionViewDataSource: CollectionViewDataSource {
         self.entities = entities
         self.presenter = presenter
     }
-
-    var numberOfItems: Int {
-        return entities.channelsList.count
+    
+    var channels: [Channel]? {
+        return entities.getChannels()
+    }
+    
+    var numberOfSections: Int {
+        return entities.getChannels()?.count ?? 0
+    }
+    
+    func numberOfItemsInSection(_ collectionView: UICollectionView, with section: Int) -> Int {
+        return entities.getChannels()?[section].programs?.count ?? 0
     }
     
     func itemCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: ListCollectionViewCell = collectionView.dequeCell(for: indexPath),
-                let repo = entities.channelsList[safe: indexPath.row]
-        else { return UICollectionViewCell() }
-        cell.configure(with: repo)
-        return cell
+        if indexPath.row == 0 { // Channels
+            guard let channelCell: ChannelCollectionViewCell = collectionView.dequeCell(for: indexPath), let channel = entities.getChannels()?[indexPath.section] else { return UICollectionViewCell() }
+                channelCell.configureWith(channel: channel)
+                channelCell.configureWith(channel: channel)
+                return channelCell
+                
+            } else {
+                guard let programCell: ProgramCollectionViewCell = collectionView.dequeCell(for: indexPath), let channel = entities.getChannels()?[indexPath.section], let program = channel.programs?[indexPath.row ] else { return UICollectionViewCell() }
+                programCell.configureWith(program: program)
+                return programCell
+            }
     }
-    
-    func didSelect(collectionView: UICollectionView, indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
-        guard let selectedRepo = entities.channelsList[safe: indexPath.row] else { return }
-        presenter?.didSelect(selectedRepo)
-    }
+
 }

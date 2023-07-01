@@ -7,7 +7,10 @@ import Foundation
 
 protocol ListInteractorOutputs: AnyObject {
     func onSuccessChannels(res: ChannelsResponseModel)
-    func onErrorSearch(error: Error)
+    func onErrorChannels(error: Error)
+    
+    func onSuccessProgramItems(res: [ProgramItemsResponseModelElement])
+    func onErrorProgramItems(error: Error)
 }
 
 final class ListInteractor: Interactorable {
@@ -20,7 +23,16 @@ final class ListInteractor: Interactorable {
             self?.presenter?.onSuccessChannels(res: res)
             //print(res)
         }, onError: { [weak self] error in
-                self?.presenter?.onErrorSearch(error: error)
+                self?.presenter?.onErrorChannels(error: error)
+        })
+    }
+    
+    func fetchProgramItems() {
+        let request = Networking.GetProgramItemsRequest()
+        Networking().programItems(with: request, onSuccess: { [weak self] response in
+            self?.presenter?.onSuccessProgramItems(res: response)
+        }, onError: { [weak self] error in
+            self?.presenter?.onErrorProgramItems(error: error)
         })
     }
 }

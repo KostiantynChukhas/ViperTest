@@ -36,5 +36,100 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CAA0DC5E-8B22-493D-8438-69E6F9A4B91B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftVIPER/Screens/List/ListPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "onSuccessProgramItems(res:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96DA72DD-9E77-4EA8-9DC7-592B65AF7B57"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftVIPER/Screens/List/ListCollectionViewDataSource.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "itemCell(collectionView:indexPath:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "96DA72DD-9E77-4EA8-9DC7-592B65AF7B57 - 65b3e74ba1cf665c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftVIPER.ListCollectionViewDataSource.itemCell(collectionView: __C.UICollectionView, indexPath: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "SwiftVIPER"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konstantinchukhas/DEVELOP/Examples/ViperTest/SwiftVIPER/Screens/List/ListCollectionViewDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "3196">
+               </Location>
+               <Location
+                  uuid = "96DA72DD-9E77-4EA8-9DC7-592B65AF7B57 - 65b3e74ba1cf6783"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftVIPER.ListCollectionViewDataSource.itemCell(collectionView: __C.UICollectionView, indexPath: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "SwiftVIPER"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konstantinchukhas/DEVELOP/Examples/ViperTest/SwiftVIPER/Screens/List/ListCollectionViewDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "2896">
+               </Location>
+               <Location
+                  uuid = "96DA72DD-9E77-4EA8-9DC7-592B65AF7B57 - 65b3e74ba1cf6783"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftVIPER.ListCollectionViewDataSource.itemCell(collectionView: __C.UICollectionView, indexPath: Foundation.IndexPath) -&gt; __C.UICollectionViewCell"
+                  moduleName = "SwiftVIPER"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/konstantinchukhas/DEVELOP/Examples/ViperTest/SwiftVIPER/Screens/List/ListCollectionViewDataSource.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "3124">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5549C8C8-BAA1-4313-ACC4-A1189C58EBCB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftVIPER/Screens/List/ListEntities.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "getChannels()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

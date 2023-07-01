@@ -6,7 +6,8 @@
 import UIKit
 
 protocol CollectionViewDataSource: AnyObject {
-    var numberOfItems: Int { get }
+    var numberOfSections: Int { get }
+    var channels: [Channel]? { get }
+    func numberOfItemsInSection(_ collectionView: UICollectionView, with section: Int) -> Int
     func itemCell(collectionView: UICollectionView, indexPath: IndexPath) -> UICollectionViewCell
-    func didSelect(collectionView: UICollectionView, indexPath: IndexPath)
 }

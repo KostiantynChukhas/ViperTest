@@ -11,7 +11,6 @@ typealias ListPresenterDependencies = (
 )
 
 final class ListPresenter: Presenterable {
-
     internal var entities: ListEntities
     private weak var view: ListViewInputs!
     let dependencies: ListPresenterDependencies
@@ -24,31 +23,39 @@ final class ListPresenter: Presenterable {
         self.entities = entities
         self.dependencies = dependencies
     }
-
 }
 
 extension ListPresenter: ListViewOutputs {
+    
+    
     func viewDidLoad() {
         view.configure(entities: entities)
-        entities.channelApiState.isFetching = true
         dependencies.interactor.fetchChannels()
+        dependencies.interactor.fetchProgramItems()
+        dependencies.router.dismiss(animated: true)
     }
 
     func onCloseButtonTapped() {
         dependencies.router.dismiss(animated: true)
     }
-
-    func onReachBottom() {
-        guard !entities.channelApiState.isFetching else { return }
-        entities.channelApiState.isFetching = true
-        dependencies.interactor.fetchChannels()
-        view.indicatorView(animate: true)
-    }
 }
 
 extension ListPresenter: ListInteractorOutputs {
+    func onErrorChannels(error: Error) {
+        view.indicatorView(animate: false)
+    }
+    
+    func onSuccessProgramItems(res: [ProgramItemsResponseModelElement]) {
+        entities.programItemsList = res
+        view.reloadCollectionView(collectionViewDataSource: ListCollectionViewDataSource(entities: entities, presenter: self))
+        view.indicatorView(animate: false)
+    }
+    
+    func onErrorProgramItems(error: Error) {
+        view.indicatorView(animate: false)
+    }
+    
     func onSuccessChannels(res: ChannelsResponseModel) {
-        entities.channelApiState.isFetching = false
         entities.channelsList = res
         view.reloadCollectionView(collectionViewDataSource: ListCollectionViewDataSource(entities: entities, presenter: self))
         view.indicatorView(animate: false)
@@ -60,7 +67,9 @@ extension ListPresenter: ListInteractorOutputs {
 }
 
 extension ListPresenter: ListTableViewDataSourceOutputs {
-    func didSelect(_ channelModel: ChannelsResponseModelElement) {
-        dependencies.router.transitionDetail(channelDetailModel: channelModel)
+    func didSelect(_ model: ChannelsResponseModelElement) {
+        
     }
+    
+  
 }
