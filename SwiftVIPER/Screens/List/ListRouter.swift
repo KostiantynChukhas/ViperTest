@@ -38,9 +38,6 @@ final class ListRouterOutput: Routerable {
         self.view = view
     }
 
-    func transitionDetail(channelDetailModel: ChannelsResponseModelElement) {
-        DetailRouterInput().push(from: view, entryEntity: DetailEntryEntity(channelDetailModel: channelDetailModel))
-    }
 }
 
 

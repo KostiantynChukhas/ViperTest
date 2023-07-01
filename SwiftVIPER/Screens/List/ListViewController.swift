@@ -23,7 +23,6 @@ final class ListViewController: UIViewController {
     
     @IBOutlet private weak var collectionView: UICollectionView! {
         didSet {
-            collectionView.registerNib(ListCollectionViewCell.self)
             collectionView.registerNib(ChannelCollectionViewCell.self)
             collectionView.registerNib(ProgramCollectionViewCell.self)
             collectionView.delegate = self

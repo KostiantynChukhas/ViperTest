@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Channel:  {
+class Channel {
     var name: String
     var programs: [Program]?
     
