@@ -1,5 +1,4 @@
 //
-//  GitHubRepository.swift
 //  SwiftVIPER
 
 

@@ -1,5 +1,4 @@
 //
-//  GitHubApi.swift
 //  SwiftVIPER
 
 import Foundation
